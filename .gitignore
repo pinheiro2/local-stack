@@ -1,0 +1,53 @@
+# ==========================================
+# Terraform
+# ==========================================
+# Ignore the local provider cache
+.terraform/
+
+# CRITICAL: Ignore state files! These contain your Vault secrets in plaintext.
+*.tfstate
+*.tfstate.*
+
+# Ignore crash logs and plan outputs
+crash.log
+crash.*.log
+*.tfplan
+
+# Note: We do NOT ignore .terraform.lock.hcl. 
+# It is best practice to commit the lock file to ensure consistent provider versions.
+
+# ==========================================
+# Python / Virtual Environment
+# ==========================================
+# Ignore your isolated AWS CLI environment
+.venv/
+__pycache__/
+*.pyc
+pip-log.txt
+
+# ==========================================
+# Secrets & Environment Variables
+# ==========================================
+# CRITICAL: Ignore your LocalStack Auth Token
+.env
+*.env
+*.env.*
+
+# Ignore any local Vault tokens if accidentally exported
+.vault-token
+
+# ==========================================
+# Docker / Local Data
+# ==========================================
+# Ignore local volume mounts (just in case you switch back from named volumes)
+volume/
+localstack_data/
+docker-volume/
+
+# ==========================================
+# OS & Editor Files
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+*.swp
